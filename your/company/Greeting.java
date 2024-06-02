@@ -1,7 +1,6 @@
-public class Greeting {
-	private final String messgage = "Hello slightly less simple Maven-less world!";
+import lombok.Value;
 
-	public String getMessgage() {
-		return messgage;
-	}
+@Value
+public class Greeting {
+	private final String messgage;
 }

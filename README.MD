@@ -56,3 +56,20 @@ You can now continue with *Step 3* by checking out the next git tag
 ```shell
 git checkout tutorial_step_3
 ```
+
+## Step 3: Old school - but spicy  
+Now you are at the point where you also want to bring in a third party library to spice up or ease your 
+developer life. Next to the package structure there is a folder  
+```shell
+/lib
+````
+You can download and place the latest jar file of project lombok in it. We use it in Greeting.java to generate an immutable class
+with the @Value annotation.  
+We can compile from the project root with the command
+```shell
+javac -classpath ./lib/* your/company/HelloMavenWorld.java your/company/Greeting.java
+```
+and afterwards run the main class with  
+```shell
+java -classpath ./lib/*:./your/company/ HelloMavenWorld
+```
