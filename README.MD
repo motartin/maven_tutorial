@@ -58,18 +58,36 @@ git checkout tutorial_step_3
 ```
 
 ## Step 3: Old school - but spicy  
-Now you are at the point where you also want to bring in a third party library to spice up or ease your 
-developer life. Next to the package structure there is a folder  
+Now you also want to bring in a third party library to spice up or ease your
+developer life. In the root of the project create a /lib folder and place the latest jar file of [Project Lombok](https://projectlombok.org/download) there.
+The structure should look something like this  
 ```shell
-/lib
+/projectRoot
+  /your
+    /company
+      Greeting.java
+      HelloMavenWorld.java
+  /lib
+    lombok.jar
 ````
-You can download and place the latest jar file of project lombok in it. We use it in Greeting.java to generate an immutable class
-with the @Value annotation.  
-We can compile from the project root with the command
+Lombok is used in Greeting.java to generate an immutable class
+with the help of the @Value annotation.  
+You can compile the project from the project root using the command
 ```shell
 javac -classpath ./lib/* your/company/HelloMavenWorld.java your/company/Greeting.java
 ```
 and afterwards run the main class with  
 ```shell
 java -classpath ./lib/*:./your/company/ HelloMavenWorld
+```
+As you can see this process becomes complex very fast. 
+With just two classes and a single dependency the setup is already
+ugly to build and maintain . Imagine how this will look like in a big project with hundreds of 
+dependencies (e.g. something using Spring) and thousands of classes.  
+So a Software Project Management tool to the rescue. In case of this tutorial
+it is going to be **[Apache Maven](https://maven.apache.org/)**.  
+  
+You can continue with step 4 by checking out the next state with the command 
+```shell
+git checkout tutorial_step_4
 ```
